@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es5",
+    "jsx": "react",
+    "module": "esnext",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "removeComments": true,
+    "strictNullChecks": false,
+    "noUnusedLocals": true,
+    "outDir": ".ts.out",
+    "lib": [
+      "scripthost",
+      "es2015",
+      "es2016",
+      "es2017",
+      "dom",
+      "dom.iterable"
+    ],
+    "typeRoots": ["node_modules/@types", "./typings"],
+    "baseUrl": "./",
+    "paths": {
+      "src/pages": ["src/pages"],
+      "src/containers": ["src/containers"],
+      "src/components": ["src/components"]
+    }
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "useCache": true,
+    "transpileOnly": false,
+    "errorsAsWarnings": true,
+    "forceIsolatedModules": true,
+    "useTranspileModule": true,
+    "ignoreDiagnostics": [],
+    "reportFiles": [
+                  "src/pages/**/*.{ts,tsx}"
+    ]
+  },
+  "exclude": [
+    "lib",
+    "dist",
+    "build",
+    "scripts",
+    "node_modules"
+  ]
+}
