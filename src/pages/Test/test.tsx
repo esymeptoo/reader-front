@@ -33,7 +33,10 @@ export default class Test extends Component<TestProp & TestDispatch> {
     };
 
     requestNovel = () => {
-        this.props.requestNovelAction();
+        this.props.requestNovelAction({
+            page: 1,
+            pageSize: 10
+        });
     };
 
     render() {
