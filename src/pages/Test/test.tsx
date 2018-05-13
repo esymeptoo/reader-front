@@ -55,7 +55,8 @@ export default class Test extends Component<TestProp & TestDispatch> {
                 test.get('isFetching') ?
                     <p>正在加载中。。。</p> : null
             }
-            <div dangerouslySetInnerHTML={{ __html: test.get('content')}} />
+            <div dangerouslySetInnerHTML={{ __html: test.getIn(['novel', 'title'])}} />
+            <div dangerouslySetInnerHTML={{ __html: test.getIn(['novel', 'content'])}} />
         </div>
     }
 }

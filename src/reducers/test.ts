@@ -5,19 +5,26 @@ import createReducer from '../utils/createReducer';
 export type TestState = ImmutableMap<{
     title: string;
     isFetching: boolean;
-    content: string;
+    content: novel;
 }>;
 
-const testState: TestState = Immutable.Map({
+type novel = {
+    title?: string;
+    content?: string;
+}
+
+const testState: TestState = Immutable.fromJS({
     title: 'test',
     isFetching: false,
-    content: ''
+    novel: {
+        title: '',
+        content: ''
+    }
 });
 
 export default createReducer(testState, {
     [Test.testChangeSuccess](state) {
         return state.set('title', 'world')
-
     },
 
     [Test.requestNovel](state) {
@@ -26,7 +33,7 @@ export default createReducer(testState, {
     },
     [Test.requestNovelSuccess](state, { response }) {
         return state.set('isFetching', false)
-            .set('content', response.html);
+            .set('novel', Immutable.fromJS(response.html));
     },
     [Test.requestNovelFail](state, { error }) {
         return state.set('isFetching', false);
